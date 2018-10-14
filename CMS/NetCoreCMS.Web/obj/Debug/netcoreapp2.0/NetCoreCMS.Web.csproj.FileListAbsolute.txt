@@ -1,0 +1,15 @@
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\bin\Debug\netcoreapp2.0\NetCoreCMS.Web.deps.json
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\bin\Debug\netcoreapp2.0\NetCoreCMS.Web.runtimeconfig.json
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\bin\Debug\netcoreapp2.0\NetCoreCMS.Web.runtimeconfig.dev.json
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\bin\Debug\netcoreapp2.0\NetCoreCMS.Web.dll
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\bin\Debug\netcoreapp2.0\NetCoreCMS.Web.pdb
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\bin\Debug\netcoreapp2.0\NetCoreCMS.Framework.dll
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\bin\Debug\netcoreapp2.0\NetCoreCMS.Framework.pdb
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\obj\Debug\netcoreapp2.0\NetCoreCMS.Web.csprojAssemblyReference.cache
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\obj\Debug\netcoreapp2.0\NetCoreCMS.Web.csproj.CoreCompileInputs.cache
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\obj\Debug\netcoreapp2.0\NetCoreCMS.Web.AssemblyInfoInputs.cache
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\obj\Debug\netcoreapp2.0\NetCoreCMS.Web.AssemblyInfo.cs
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\obj\Debug\netcoreapp2.0\NetCoreCMS.Web.csproj.CopyComplete
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\obj\Debug\netcoreapp2.0\NetCoreCMS.Web.dll
+C:\Users\Ansar\Desktop\CMS\NetCoreCMS.Web\obj\Debug\netcoreapp2.0\NetCoreCMS.Web.pdb

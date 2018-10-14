@@ -1,0 +1,114 @@
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+
+.home {
+    border: solid 1px;
+}
+
+/*Side design*/
+.topHeader {
+    height: 100px;
+}    
+/*.topMenu {
+    display: block;
+}*/
+.navbar-brand-with-top-menu{
+    display:none;
+}
+.userMenu{
+    display:none;
+}
+.topWidgetZone{
+    float:right;
+    max-height:80px;
+    max-width: 60%;
+    overflow:hidden;
+}
+.topLogo {
+    float: left;
+    line-height: 100px;
+}
+    .topLogo a {
+        color: inherit;
+    }
+        .topLogo a:hover {
+            text-decoration: none;
+        }
+        .topLogo a:visited {
+            color: inherit;
+            text-decoration: none;
+        }
+    .topLogo h4 {
+        padding-left: 100px;
+    }
+
+.navbar {
+    border-radius: 0px;
+}
+@media only screen and (max-width: 766px) {
+    .topMenu {
+        display: none;
+    }
+    /*.navbar-brand-with-top-menu {
+        display: block;
+    }*/
+    .userMenu {
+        display: block;
+    }
+    .topWidgetZone {
+        display:none;
+    }
+
+    .topLogo {
+        width:100%;
+        text-align: center;
+    }
+
+        .topLogo h1 {
+            text-align:center;
+        }
+
+        .topLogo h4 {
+            padding-left: initial;
+        }
+}
+
+.mainBody {
+    min-height: 65vh;
+    padding: 0px;
+    word-wrap: break-word;
+}
+.fullWidthSlider {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 15px;
+}
+.footer-content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.footer-bottom {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.copyright {
+    float: left;
+}
+.poweredby{
+    float:right;
+    text-align:right;
+}
+
+.two-column-div {
+    column-count: 2;
+}
+/*site design*/

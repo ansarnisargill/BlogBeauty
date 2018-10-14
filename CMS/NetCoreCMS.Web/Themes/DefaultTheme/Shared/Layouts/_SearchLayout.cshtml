@@ -1,0 +1,68 @@
+﻿@{
+    BodyWidth = 12; //Uses for bootstrap grid system
+    CurrentLayout   = ThemeResources.Layouts.SiteLayout;    
+    ThemeResources.RegisterResources(CurrentLayout);
+}
+
+<!DOCTYPE html>
+<html lang="@CurrentLanguageCode">
+    
+    <head>        
+        @NccRenderHead()
+        @Html.Raw(JavaScriptSnippet.FullScript)
+        @NccRenderHeaderCss()
+        @NccRenderHeaderScripts()
+
+        @RenderSection(ThemeHelper.Sections.StyleHeader, required: false)
+        @RenderSection(ThemeHelper.Sections.ScriptHeader, required: false)
+        @RenderSection("Styles", required: false)
+    </head>
+
+    <body id="body">
+        <!--MessageContainer-->
+        <div class="row">
+            @NccRenderMessages()
+        </div>
+        <!--GlobalMessages-->
+        <div class="row">
+            @NccRenderGlobalMessages()
+        </div>
+        <!--Loading-->
+        @NccRenderLoadingMaskContainer()
+        <!--Header-->
+        @NccRenderHeader()
+        <!--Navbar-->
+        @NccRenderNavigation("Parts/_NavigationNoSearch")
+        <!--ZoneTOPEnd-->
+        <!--MainBody-->
+        <div class="container mainBody">   
+            <!--LeftColumn-->
+            @NccRenderLeftColumn()
+            <!--LeftColumn-->
+            <!--RightColumn-->
+            @NccRenderRightColumn()
+            <!--RightColumn-->
+
+            <!--Maincontent-->
+            <div class="col-md-@BodyWidth">
+                <!--Featured-->
+                @NccRenderFeaturedSection()
+                @NccRenderBody()
+            </div>
+            <!--MainContent-->
+        </div>
+        <!--MainBody-->
+
+        <!--FooterStart-->
+        @NccRenderFooter()
+        <!--FooterEnd-->
+
+        @NccRenderFooterCss()
+        @NccRenderFooterScripts()
+
+        @RenderSection(ThemeHelper.Sections.StyleFooter, required: false)
+        @RenderSection(ThemeHelper.Sections.ScriptFooter, required: false)
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>
+

@@ -1,0 +1,73 @@
+﻿@{
+    var currentMenu = ViewBag.CurrentMenu;
+}
+
+<div class="col-sm-8">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="hidden" id="menuId" name="menuId" value="@currentMenu.Id" />
+                    <input type="text" id="menuName" class="form-control input-sm" placeholder="Enter Menu Name" value="@currentMenu.Name" />
+                </div>
+                <div class="col-md-3">
+                    <select id="menuLocation" class="form-control input-sm">
+                        <option value="">Menu Location</option>
+                        @foreach (var menuLocation in ViewBag.MenuLocations)
+                        {
+                            if (currentMenu.Id > 0 && currentMenu.Position == menuLocation)
+                            {
+                                <option value="@menuLocation" selected>@menuLocation</option>
+                            }
+                            else
+                            {
+                                <option value="@menuLocation">@menuLocation</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    @if (GlobalContext.WebSite.IsMultiLangual)
+                    {
+                        <select id="menuLanguage" class="form-control input-sm" asp-items="ViewBag.MenuLanguages"></select>
+                    }
+                </div>
+                <div class="col-md-3">
+                    @if (currentMenu.Id > 0)
+                    {
+                        <a class="btn btn-sm btn-outline btn-success pull-right" style="margin-left:5px;" href="/CmsMenu">New Menu</a> 
+                    }
+                    <input type="button" id="saveMenuBtn" value="Save Menu" class="btn btn-sm btn-outline btn-primary pull-right" />                    
+                </div>
+
+                <div style="clear:both;"></div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+        <div class="panel-body">
+            <ul id="selectedMenuTree">
+                @if (currentMenu.Id > 0)
+                {
+                    @Html.Raw(ViewBag.CurrentMenuItems)
+                }
+                else
+                {
+                    <li class="list-group-item no-boarder" ncc-menu-item-id="0" ncc-menu-item-action-type="Url" ncc-menu-item-controller="Home" ncc-menu-item-action="Index" ncc-menu-item-action-data="" ncc-menu-item-url="/CmsHome" ncc-menu-item-target="" ncc-menu-item-order="1" ncc-menu-item-title="Home">
+                        <div class="menu-item-content">
+                            <div class="pull-left" style="padding: 5px 5px;">
+                                <i class="glyphicon glyphicon-move margin-right-10"></i>                                
+                                <span id="homeTxt" class="ncc-menu-title">Home</span>
+                                <input id="homeTxtEditor" class="ncc-menu-title-editor" type="text" style="display:none" />
+                                &nbsp;&nbsp;<i class="fa fa-edit" onclick="ShowEditor('homeTxt', 'homeTxtEditor')"></i>
+                            </div>
+                            <input type="button" class="closeMenuItem pull-right" value="X" onclick="RemoveMenuItem(this)" />
+                        </div>
+                    </li>
+                }
+            </ul>
+            <span id="result"></span>
+        </div>
+
+    </div>
+</div>

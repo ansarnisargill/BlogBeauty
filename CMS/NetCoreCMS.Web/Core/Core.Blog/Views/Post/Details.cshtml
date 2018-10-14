@@ -1,0 +1,55 @@
+﻿@using System.Linq
+
+@model NccPost
+@{
+
+    if (!string.IsNullOrEmpty(Model.Layout) && ThemeHelper.ActiveTheme.Layouts.Where(x => x.Name == Model.Layout).FirstOrDefault() != null)
+    {
+        Layout = "_" + Model.Layout;
+    }
+
+    var postDetails = Model.PostDetails.Where(x => x.Language == ViewBag.CurrentLanguage).FirstOrDefault();
+    if (postDetails == null)
+    {
+        postDetails = Model.PostDetails.FirstOrDefault();
+    }
+
+    Title = postDetails?.Title;
+    MetaDescription = postDetails?.MetaDescription;
+    MetaKeyword = postDetails?.MetaKeyword;
+}
+
+@section Styles{
+    <style>
+       @Html.Raw("        ");
+    </style>
+}
+<div class="">
+    <div>
+        <h3>@postDetails?.Title</h3>
+        <h5 style="font-style:italic;">
+            @_T["Author"]: @if (Model.Author != null)
+            { <span>@Model.Author.FullName</span> }
+            else
+            {<span>@_T["Anonymous"]</span> }
+            <span> | @_T["Published Date"]: @Model.PublishDate.ToString("MMM dd, yyyy")</span>
+        </h5>
+        <hr />
+        @if (Model.ThumImage != null)
+        {
+            <img src="@Model.ThumImage" width="100%" />
+        }
+        @Html.Raw(postDetails?.Content)
+    </div>
+    <br />
+    <p><a href="/Post/">< @_T["Back to All Post"]</a></p>
+</div>
+@if (Model.AllowComment == true)
+{
+    <!--CommentsSectionStart-->
+    @await Html.PartialAsync("_Comments", Model)
+    <!--CommentsSectionEnd-->
+}
+@section Scripts{
+
+}

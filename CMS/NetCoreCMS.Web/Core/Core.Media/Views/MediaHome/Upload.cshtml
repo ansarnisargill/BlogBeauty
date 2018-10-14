@@ -1,0 +1,73 @@
+﻿@using NetCoreCMS.Framework.Utility
+@using System.Collections
+
+@{
+    Layout = ViewBag.Layout;
+    Title = "Media Upload";
+    SubTitle = "Upload images online";
+    if (ViewBag.IsFile)
+    {
+        Title = "File Upload";
+        SubTitle = "Upload files online";
+    }
+}
+@if(ViewBag.UploadPath!="")
+{
+    <div style="width:100%; text-align:center;">
+        <a asp-controller="MediaHome" asp-action="Index" asp-route-isFile="@ViewBag.IsFile" asp-route-inputId="@ViewBag.InputId" asp-route-sq="@ViewBag.UploadPath" class="btn btn-outline btn-info">Go to upload dir</a> 
+    </div>
+    <br />
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @SubTitle
+                <div class="pull-right"><a asp-controller="MediaHome" asp-action="Index" asp-route-isFile="@ViewBag.IsFile" asp-route-inputId="@ViewBag.InputId" class="btn btn-outline btn-primary btn-xs">Manage</a></div>
+            </div>
+            <div class="panel-body">
+                <form method="post" asp-action="Upload" asp-controller="MediaHome" enctype="multipart/form-data">
+                    <input type="hidden" id="inputId" name="inputId" value="@ViewBag.InputId" />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-2"><label>File type : </label></div>
+                            <div class="col-md-10">
+                                <select name="isFile" class="form-control" style="max-width:200px">
+                                    <option value=0>Image</option>
+                                    @if(ViewBag.IsFile == true)
+                                    {
+                                        <option value=true selected>File</option>
+                                    }
+                                    else
+                                    {
+                                        <option value=true>File</option>
+                                    }
+                                </select>
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-2"><label>Select files : </label></div>
+                            <div class="col-md-10">
+                                <input type="file" name="files" class="form-control" multiple />
+                            </div>
+                            <br />
+                            <br />
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-10">
+                                <input type="submit" class="btn btn-success " value="Upload" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+}

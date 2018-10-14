@@ -1,0 +1,45 @@
+﻿<div class="Featured">
+    @{
+        var featured = GetWebSiteWidgets(CurrentLayout, ThemeResources.Zones.Featured);
+        if (featured != null && featured.Count > 0)
+        {
+            <div style="width:100%;">
+                @foreach (var item in featured)
+                {
+                    var widget = item.Widget;                    
+                    widget.Init(item.Id);
+
+                    if (string.IsNullOrEmpty(widget.Language) || string.IsNullOrEmpty(CurrentLanguage) || CurrentLanguage.ToLower() == widget.Language.ToLower())
+                    {
+                        if (widget.DisplayTitle != "" || widget.Footer != "")
+                        {
+                            <div class='panel panel-default'>
+                                @if (widget.DisplayTitle != "")
+                                {
+                                    <div class='panel-heading'>
+                                        @Html.Raw(_T[widget.DisplayTitle])
+                                    </div>
+                                }
+                                <div class='panel-body'>
+                                    @Html.Raw(widget.RenderBody())
+                                </div>
+                                @if (widget.Footer != "")
+                                {
+                                    <div class='panel-footer'>
+                                        @Html.Raw(_T[widget.Footer])
+                                    </div>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+                                @Html.Raw(widget.RenderBody())
+                            </div>
+                        }
+                    }                     
+                }
+            </div>
+        }
+    }
+</div>

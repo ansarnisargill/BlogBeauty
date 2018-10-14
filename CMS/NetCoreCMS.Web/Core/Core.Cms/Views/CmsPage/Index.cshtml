@@ -1,0 +1,32 @@
+﻿@using System.Linq
+
+@model NccPage
+@{
+
+    if (!string.IsNullOrEmpty(Model.Layout) && ThemeHelper.ActiveTheme.Layouts.Where(x=>x.Name == Model.Layout).FirstOrDefault() != null) {
+        Layout = "_" + Model.Layout;
+    }
+
+    var pageDetails = Model.PageDetails.Where(x => x.Language == ViewBag.CurrentLanguage).FirstOrDefault();
+    if(pageDetails == null)
+    {
+        pageDetails = Model.PageDetails.FirstOrDefault();
+    }
+
+    Title = pageDetails?.Title;
+    MetaDescription = pageDetails?.MetaDescription;
+    MetaKeyword = pageDetails?.MetaKeyword;
+}
+ 
+@section StyleFooter{
+    <style>
+       @Html.Raw("        ");
+    </style>
+}
+<div class="row">
+    @Html.Raw(pageDetails.Content)
+</div>
+ 
+@section ScriptFooter{
+
+}

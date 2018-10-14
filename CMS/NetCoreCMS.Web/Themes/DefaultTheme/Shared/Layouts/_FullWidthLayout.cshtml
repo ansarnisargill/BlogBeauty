@@ -1,0 +1,60 @@
+﻿@{
+    BodyWidth = 12; //Uses for bootstrap grid system
+    CurrentLayout = ThemeResources.Layouts.SiteLayout;     
+    ThemeResources.RegisterResources(CurrentLayout);
+}
+ 
+<!DOCTYPE html>
+<html lang="@CurrentLanguageCode">
+    <head>
+        @NccRenderHead()
+        @Html.Raw(JavaScriptSnippet.FullScript)
+        @NccRenderHeaderCss()
+        @NccRenderHeaderScripts()
+
+        @RenderSection(ThemeHelper.Sections.StyleHeader, required: false)
+        @RenderSection(ThemeHelper.Sections.ScriptHeader, required: false)
+        @RenderSection("Styles", required: false)
+    </head>
+    <body id="body">
+        <!--MessageContainer-->
+        <div class="row">
+            @NccRenderMessages()
+        </div>
+        <!--GlobalMessages-->
+        <div class="row">
+            @NccRenderGlobalMessages()
+        </div>
+        <!--Loading-->
+        @NccRenderLoadingMaskContainer()
+        <!--ZoneTOPStart-->
+        <!--Header-->
+        @NccRenderHeader()
+
+        <!--Navbar-->
+        @NccRenderNavigation()
+        <!--ZoneTOPEnd-->
+        <!--MainBodyStart-->
+        <div class="container mainBody">
+            <!--MaincontentStart-->
+            <div class="col-md-@BodyWidth">
+                <!--Featured-->
+                @NccRenderFeaturedSection()
+                @NccRenderBody()
+            </div>
+            <!--MainContentEnd--> 
+        </div>
+        <!--MainBodyEnd-->
+        <!--FooterStart-->
+        @NccRenderFooter()
+        <!--FooterEnd-->
+
+        @NccRenderFooterCss()
+        @NccRenderFooterScripts()
+
+        @RenderSection(ThemeHelper.Sections.StyleFooter, required: false)
+        @RenderSection(ThemeHelper.Sections.ScriptFooter, required: false)
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>
+

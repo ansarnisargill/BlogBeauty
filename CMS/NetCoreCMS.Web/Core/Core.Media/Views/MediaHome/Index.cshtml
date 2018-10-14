@@ -1,0 +1,160 @@
+﻿@using NetCoreCMS.Framework.Utility
+@using System.Collections
+
+@model List<NccMediaViewModel>
+
+@{
+    Layout = ViewBag.Layout;
+    Title = "Image Gallary";
+    SubTitle = "Manage existing image media";
+    if (ViewBag.IsFile)
+    {
+        Title = "File Storage";
+        SubTitle = "Manage existing files";
+    }
+
+    var class1 = "";
+    if (ViewBag.InputId == "") {
+        class1 = "";
+    }
+}
+
+@section Styles{
+    <link href="~/lib/lightbox2/src/css/lightbox.css" rel="stylesheet" />
+}  
+<style>
+    .mediaBox {
+        float: left;
+        margin: 5px;
+        padding: 5px;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        border: 1px solid;
+        overflow: hidden;
+        display: table;
+    }
+</style>
+
+<div class="@class1">
+    <div class="">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @SubTitle
+                <div class="pull-right"><a asp-controller="MediaHome" asp-action="Upload" asp-route-isFile="@ViewBag.IsFile" asp-route-inputId="@ViewBag.InputId" class="btn btn-outline btn-primary btn-xs">Upload</a></div>
+            </div>
+            <div class="panel-body">
+                @foreach (var item in Model)
+                {
+                    if (item.IsDir)
+                    {
+                        <a asp-controller="MediaHome" asp-action="Index" asp-route-sq="@item.FullPath" asp-route-isFile="@ViewBag.IsFile" asp-route-inputId="@ViewBag.InputId" asp-route-CKEditorFuncNum="@ViewBag.CKEditorFuncNum">
+                            <div class="mediaBox">
+                                <span style="vertical-align:middle;  display: table-cell;">
+                                    <strong>@item.FileName</strong> <br />
+                                    @if (item.TotalSubDir > 0)
+                                    {
+                                        <span>Dir(@item.TotalSubDir)</span><br />
+                                    }
+                                    @if (item.TotalFile > 0 && ViewBag.IsFile==true)
+                                    {
+                                        <span>Total File(@item.TotalFile) </span>
+                                    }
+                                    else if (item.TotalFile > 0)
+                                    {
+                                        <span>Total Image(@item.TotalFile) </span>
+                                    }
+                                </span>
+                            </div>
+                        </a>
+                    }
+                    else if(item.IsImage)
+                    {
+                        <div class="mediaBox">
+                            <a href="@item.FullPath" data-lightbox="image-gallary" data-title="@item.FileName">
+                                <img src="@item.FullPath" width="188px" height="120px" title="@item.FileName" />
+                                @*<img id="myImg"  src="~/Images/docs-icon.png" width="188px" height="120px" title="@item.FileName" />*@
+                                @if (item.FileName.Length > 11)
+                                {
+                                    <span>@item.FileName.Substring(0, 11)</span>
+                                    <span> ~ </span>
+                                    <span>@item.FileName.Substring(item.FileName.LastIndexOf("."), 4)</span>
+                                }
+                                else
+                                {
+                                    <span>@item.FileName</span>
+                                }
+                                (@item.ItemSize)<br />
+                            </a>
+                            <span>Cr: @item.CreationTime.ToString("yyyy-MM-dd hh:mm tt")</span>
+                            @*<input type="text" class="form-control" onClick="this.select();" value="@item.FullPath" />*@
+                            <hr style="padding:2px;margin:1px;" />
+                            @*<a asp-controller="CmsMedia" asp-action="Rename" asp-route-fullPath="@item.FullPath" asp-route-parrentDir="@item.ParrentDir" class="btn btn-xs btn-outline btn-primary">Rename</a>*@
+                            @if (!string.IsNullOrEmpty(ViewBag.InputId))
+                            {
+                                <input type="button" onclick="selectFile('@item.FullPath', '@ViewBag.InputId', '@ViewBag.CKEditorFuncNum')" value="Select" class="btn btn-xs btn-success" data-imageurl="@item.FullPath" />
+                            }                         
+                            <a asp-controller="MediaHome" asp-action="Delete" asp-route-fullPath="@item.FullPath.Replace("/","\\")" asp-route-parrentDir="@item.ParrentDir" asp-route-isFile="@ViewBag.IsFile" asp-route-inputId="@ViewBag.InputId" class="btn btn-xs btn-outline btn-danger">Delete</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="mediaBox">
+                            <a href="@item.FullPath" target="_blank">
+                                <img src="~/Images/docs-icon.png" width="188px" height="120px" title="@item.FileName" />
+                                @if (item.FileName.Length > 11)
+                                {
+                                    <span>@item.FileName.Substring(0, 11)</span>
+                                    <span> ~ </span>
+                                    <span>@item.FileName.Substring(item.FileName.LastIndexOf("."), 4)</span>
+                                }
+                                else
+                                {
+                                    <span>@item.FileName</span>
+                                }
+                                (@item.ItemSize)<br />
+                            </a>
+                            <span>Ct: @item.CreationTime.ToString("yyyy-MM-dd hh:mm tt")</span>
+                            <hr style="padding:2px;margin:1px;" />
+                            @*<a asp-controller="CmsMedia" asp-action="Rename" asp-route-fullPath="@item.FullPath" asp-route-parrentDir="@item.ParrentDir" class="btn btn-xs btn-outline btn-primary">Rename</a>*@
+                            
+                            @if (!string.IsNullOrEmpty(ViewBag.InputId))
+                            {
+                                <input type="button" onclick="selectFile('@item.FullPath', '@ViewBag.InputId', '@ViewBag.CKEditorFuncNum')" value="Select" class="btn btn-xs btn-success" data-imageurl="@item.FullPath" />
+                            }     
+                            <a asp-controller="MediaHome" asp-action="Delete" asp-route-fullPath="@item.FullPath.Replace("/","\\")" asp-route-parrentDir="@item.ParrentDir" asp-route-isFile="@ViewBag.IsFile" asp-route-inputId="@ViewBag.InputId" class="btn btn-xs btn-outline btn-danger">Delete</a>
+                        </div>
+                    }
+                }
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+
+@section Scripts{
+    <script src="~/lib/lightbox2/src/js/lightbox.js"></script>
+    <script>
+        function selectFile(fileUrl, inputId, CKEditorFuncNum) {
+            //console.log(fileUrl);
+            //console.log(inputId);
+            if (inputId == "ckeditor") {
+                window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, fileUrl);
+            }
+            else {
+                window.opener.document.getElementById(inputId).value = fileUrl;
+            }
+            window.close();
+        }
+    </script>
+
+}
