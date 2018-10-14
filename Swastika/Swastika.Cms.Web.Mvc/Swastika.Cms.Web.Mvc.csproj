@@ -1,0 +1,409 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <GenerateProgramFile>false</GenerateProgramFile>
+    <PublishWithAspNetCoreTargetManifest>False</PublishWithAspNetCoreTargetManifest>
+    <Version>0.0.4</Version>
+    <Authors>Swastika I/O Team, Smileway Team</Authors>
+    <Company>Swastika I/O</Company>
+    <Product>Swastika I/O Core CMS (MVC)</Product>
+    <Copyright>Swastika I/O, Smileway, Befirst.Solution</Copyright>
+    <PackageLicenseUrl>https://github.com/Swastika-IO/Swastika-IO-Core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://www.swastika.io</PackageProjectUrl>
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/26378971</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Swastika-IO/Swastika-IO-Core</RepositoryUrl>
+    <PackageTags>Asp.Net Core CMS, Asp.Net Core MVC CMS, C# Core CMS, NetCoreCMS, Core CMS, Modular Architecture, CMS Theme, CMS Widget, Multilangual CMS, .Net CMS Platform, .Net CMS Open Source, .Net CMS Comparison 2017, .Net CMS System, .Net CMS Framework, .Net CMS Open Source MVC, .Net CMS tools, .Net CMS website, Content Management System, Blog Engine, DotNet Core,</PackageTags>
+    <RuntimeFrameworkVersion>2.1.2</RuntimeFrameworkVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Portal\Controllers\Apis\**" />
+    <Compile Remove="Areas\Portal\Data\**" />
+    <Compile Remove="Areas\Portal\Models\**" />
+    <Compile Remove="Areas\Portal\ViewComponents\**" />
+    <Compile Remove="Areas\Portal\Views\ApiModule\**" />
+    <Compile Remove="Areas\Portal\Views\Apperance\**" />
+    <Compile Remove="Areas\Portal\Views\Article\**" />
+    <Compile Remove="Areas\Portal\Views\Auth\**" />
+    <Compile Remove="Areas\Portal\Views\Collaborators\**" />
+    <Compile Remove="Areas\Portal\Views\Contents\**" />
+    <Compile Remove="Areas\Portal\Views\Culture\**" />
+    <Compile Remove="Areas\Portal\Views\Dashboard\**" />
+    <Compile Remove="Areas\Portal\Views\File\**" />
+    <Compile Remove="Areas\Portal\Views\Language\**" />
+    <Compile Remove="Areas\Portal\Views\Media\**" />
+    <Compile Remove="Areas\Portal\Views\Module\**" />
+    <Compile Remove="Areas\Portal\Views\Pages\**" />
+    <Compile Remove="Areas\Portal\Views\Product\**" />
+    <Compile Remove="Areas\Portal\Views\Profile\**" />
+    <Compile Remove="Areas\Portal\Views\Setting\**" />
+    <Compile Remove="Areas\Portal\Views\Team\**" />
+    <Compile Remove="Areas\Portal\Views\Template\**" />
+    <Compile Remove="Areas\Portal\Views\Theme\**" />
+    <Compile Remove="Views\Shared\Articles\**" />
+    <Compile Remove="Views\Shared\Components\**" />
+    <Compile Remove="Views\Shared\Corlate\**" />
+    <Compile Remove="Views\Shared\Forms\**" />
+    <Compile Remove="Views\Shared\Layouts\**" />
+    <Compile Remove="Views\Shared\Modules\**" />
+    <Compile Remove="Views\Shared\NowUI\**" />
+    <Compile Remove="Views\Shared\Pages\**" />
+    <Compile Remove="Views\Shared\Templates\Modus\**" />
+    <Compile Remove="Views\Shared\Templates\Now-UI-Kit-PRO\**" />
+    <Compile Remove="Views\Shared\Templates\Ossibird\**" />
+    <Compile Remove="Views\Shared\Widgets\**" />
+    <Compile Remove="wwwroot\app-portal\components\**" />
+    <Compile Remove="wwwroot\app-portal\controllers\**" />
+    <Compile Remove="wwwroot\app-portal\pages\shared\**" />
+    <Compile Remove="wwwroot\app-portal\plugins\**" />
+    <Compile Remove="wwwroot\app-portal\plunk\**" />
+    <Compile Remove="wwwroot\app-portal\services\**" />
+    <Compile Remove="wwwroot\app\**" />
+    <Compile Remove="wwwroot\lib\**" />
+    <Content Remove="Areas\Portal\Controllers\Apis\**" />
+    <Content Remove="Areas\Portal\Data\**" />
+    <Content Remove="Areas\Portal\Models\**" />
+    <Content Remove="Areas\Portal\ViewComponents\**" />
+    <Content Remove="Areas\Portal\Views\ApiModule\**" />
+    <Content Remove="Areas\Portal\Views\Apperance\**" />
+    <Content Remove="Areas\Portal\Views\Article\**" />
+    <Content Remove="Areas\Portal\Views\Auth\**" />
+    <Content Remove="Areas\Portal\Views\Collaborators\**" />
+    <Content Remove="Areas\Portal\Views\Contents\**" />
+    <Content Remove="Areas\Portal\Views\Culture\**" />
+    <Content Remove="Areas\Portal\Views\Dashboard\**" />
+    <Content Remove="Areas\Portal\Views\File\**" />
+    <Content Remove="Areas\Portal\Views\Language\**" />
+    <Content Remove="Areas\Portal\Views\Media\**" />
+    <Content Remove="Areas\Portal\Views\Module\**" />
+    <Content Remove="Areas\Portal\Views\Pages\**" />
+    <Content Remove="Areas\Portal\Views\Product\**" />
+    <Content Remove="Areas\Portal\Views\Profile\**" />
+    <Content Remove="Areas\Portal\Views\Setting\**" />
+    <Content Remove="Areas\Portal\Views\Team\**" />
+    <Content Remove="Areas\Portal\Views\Template\**" />
+    <Content Remove="Areas\Portal\Views\Theme\**" />
+    <Content Remove="Views\Shared\Articles\**" />
+    <Content Remove="Views\Shared\Components\**" />
+    <Content Remove="Views\Shared\Corlate\**" />
+    <Content Remove="Views\Shared\Forms\**" />
+    <Content Remove="Views\Shared\Layouts\**" />
+    <Content Remove="Views\Shared\Modules\**" />
+    <Content Remove="Views\Shared\NowUI\**" />
+    <Content Remove="Views\Shared\Pages\**" />
+    <Content Remove="Views\Shared\Templates\Modus\**" />
+    <Content Remove="Views\Shared\Templates\Now-UI-Kit-PRO\**" />
+    <Content Remove="Views\Shared\Templates\Ossibird\**" />
+    <Content Remove="Views\Shared\Widgets\**" />
+    <Content Remove="wwwroot\app-portal\components\**" />
+    <Content Remove="wwwroot\app-portal\controllers\**" />
+    <Content Remove="wwwroot\app-portal\pages\shared\**" />
+    <Content Remove="wwwroot\app-portal\plunk\**" />
+    <Content Remove="wwwroot\app-portal\services\**" />
+    <Content Remove="wwwroot\app\**" />
+    <Content Remove="wwwroot\lib\**" />
+    <EmbeddedResource Remove="Areas\Portal\Controllers\Apis\**" />
+    <!--<Content Remove="wwwroot\lib\**" />-->
+    <EmbeddedResource Remove="Areas\Portal\Data\**" />
+    <EmbeddedResource Remove="Areas\Portal\Models\**" />
+    <EmbeddedResource Remove="Areas\Portal\ViewComponents\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\ApiModule\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Apperance\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Article\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Auth\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Collaborators\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Contents\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Culture\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Dashboard\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\File\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Language\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Media\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Module\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Pages\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Product\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Profile\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Setting\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Team\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Template\**" />
+    <EmbeddedResource Remove="Areas\Portal\Views\Theme\**" />
+    <EmbeddedResource Remove="Views\Shared\Articles\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\**" />
+    <EmbeddedResource Remove="Views\Shared\Corlate\**" />
+    <EmbeddedResource Remove="Views\Shared\Forms\**" />
+    <EmbeddedResource Remove="Views\Shared\Layouts\**" />
+    <EmbeddedResource Remove="Views\Shared\Modules\**" />
+    <EmbeddedResource Remove="Views\Shared\NowUI\**" />
+    <EmbeddedResource Remove="Views\Shared\Pages\**" />
+    <EmbeddedResource Remove="Views\Shared\Templates\Modus\**" />
+    <EmbeddedResource Remove="Views\Shared\Templates\Now-UI-Kit-PRO\**" />
+    <EmbeddedResource Remove="Views\Shared\Templates\Ossibird\**" />
+    <EmbeddedResource Remove="Views\Shared\Widgets\**" />
+    <EmbeddedResource Remove="wwwroot\app-portal\components\**" />
+    <EmbeddedResource Remove="wwwroot\app-portal\controllers\**" />
+    <EmbeddedResource Remove="wwwroot\app-portal\pages\shared\**" />
+    <EmbeddedResource Remove="wwwroot\app-portal\plugins\**" />
+    <EmbeddedResource Remove="wwwroot\app-portal\plunk\**" />
+    <EmbeddedResource Remove="wwwroot\app-portal\services\**" />
+    <EmbeddedResource Remove="wwwroot\app\**" />
+    <EmbeddedResource Remove="wwwroot\lib\**" />
+    <None Remove="Areas\Portal\Controllers\Apis\**" />
+    <None Remove="Areas\Portal\Data\**" />
+    <None Remove="Areas\Portal\Models\**" />
+    <None Remove="Areas\Portal\ViewComponents\**" />
+    <None Remove="Areas\Portal\Views\ApiModule\**" />
+    <None Remove="Areas\Portal\Views\Apperance\**" />
+    <None Remove="Areas\Portal\Views\Article\**" />
+    <None Remove="Areas\Portal\Views\Auth\**" />
+    <None Remove="Areas\Portal\Views\Collaborators\**" />
+    <None Remove="Areas\Portal\Views\Contents\**" />
+    <None Remove="Areas\Portal\Views\Culture\**" />
+    <None Remove="Areas\Portal\Views\Dashboard\**" />
+    <None Remove="Areas\Portal\Views\File\**" />
+    <None Remove="Areas\Portal\Views\Language\**" />
+    <None Remove="Areas\Portal\Views\Media\**" />
+    <None Remove="Areas\Portal\Views\Module\**" />
+    <None Remove="Areas\Portal\Views\Pages\**" />
+    <None Remove="Areas\Portal\Views\Product\**" />
+    <None Remove="Areas\Portal\Views\Profile\**" />
+    <None Remove="Areas\Portal\Views\Setting\**" />
+    <None Remove="Areas\Portal\Views\Team\**" />
+    <None Remove="Areas\Portal\Views\Template\**" />
+    <None Remove="Areas\Portal\Views\Theme\**" />
+    <None Remove="Views\Shared\Articles\**" />
+    <None Remove="Views\Shared\Components\**" />
+    <None Remove="Views\Shared\Corlate\**" />
+    <None Remove="Views\Shared\Forms\**" />
+    <None Remove="Views\Shared\Layouts\**" />
+    <None Remove="Views\Shared\Modules\**" />
+    <None Remove="Views\Shared\NowUI\**" />
+    <None Remove="Views\Shared\Pages\**" />
+    <None Remove="Views\Shared\Templates\Modus\**" />
+    <None Remove="Views\Shared\Templates\Now-UI-Kit-PRO\**" />
+    <None Remove="Views\Shared\Templates\Ossibird\**" />
+    <None Remove="Views\Shared\Widgets\**" />
+    <None Remove="wwwroot\app-portal\components\**" />
+    <None Remove="wwwroot\app-portal\controllers\**" />
+    <None Remove="wwwroot\app-portal\pages\shared\**" />
+    <None Remove="wwwroot\app-portal\plugins\**" />
+    <None Remove="wwwroot\app-portal\plunk\**" />
+    <None Remove="wwwroot\app-portal\services\**" />
+    <None Remove="wwwroot\app\**" />
+    <None Remove="wwwroot\lib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="App_Start\Startup.SignalR.cs" />
+    <Compile Remove="Areas\Portal\Controllers\ApperanceController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\ArticlesController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\AuthController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\CultureController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\DashboardController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\FileController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\LanguageController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\MediaController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\ModuleController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\PagesController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\ProductController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\ProfileController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\SettingController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\TeamController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\TemplateController.cs" />
+    <Compile Remove="Areas\Portal\Controllers\ThemeController.cs" />
+    <Compile Remove="Controllers\DefaultController.cs" />
+    <Compile Remove="Controllers\ManageController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="appsettings.json" />
+    <Content Remove="Areas\Portal\Views\Shared\Components\HeaderNavbar\DefaultOld.cshtml" />
+    <Content Remove="Areas\Portal\Views\Shared\Widgets\_FeatureImage.cshtml" />
+    <Content Remove="Areas\Portal\Views\Shared\Widgets\_ThumbnailImage.cshtml" />
+    <Content Remove="Areas\Portal\Views\Shared\_Layout.cshtml" />
+    <Content Remove="data\configuration-en.json" />
+    <Content Remove="data\lang-en.json" />
+    <Content Remove="Views\Home\About.cshtml" />
+    <Content Remove="Views\Home\Article.cshtml" />
+    <Content Remove="Views\Home\Blog.cshtml" />
+    <Content Remove="Views\Home\Contact.cshtml" />
+    <Content Remove="Views\Home\Index.cshtml" />
+    <Content Remove="Views\Home\List.cshtml" />
+    <Content Remove="Views\Home\TTS.cshtml" />
+    <Content Remove="Views\Shared\Error.cshtml" />
+    <Content Remove="Views\Shared\Modules.cshtml" />
+    <Content Remove="Views\Shared\RichTextEditor.cshtml" />
+    <Content Remove="Views\Shared\_AdminLayout.cshtml" />
+    <Content Remove="Views\Shared\_Banners.cshtml" />
+    <Content Remove="Views\Shared\_Breadcrumb.cshtml" />
+    <Content Remove="Views\Shared\_Clients.cshtml" />
+    <Content Remove="Views\Shared\_Comments.cshtml" />
+    <Content Remove="Views\Shared\_Comments_Facebook.cshtml" />
+    <Content Remove="Views\Shared\_Contacts.cshtml" />
+    <Content Remove="Views\Shared\_Editor_ModuleData.cshtml" />
+    <Content Remove="Views\Shared\_Footer.cshtml" />
+    <Content Remove="Views\Shared\_Header.cshtml" />
+    <Content Remove="Views\Shared\_HotTours.cshtml" />
+    <Content Remove="Views\Shared\_Layout.cshtml" />
+    <Content Remove="Views\Shared\_Layout_Corlate.cshtml" />
+    <Content Remove="Views\Shared\_LoginPartial.cshtml" />
+    <Content Remove="Views\Shared\_OtherServices.cshtml" />
+    <Content Remove="Views\Shared\_PartialSelectLanguage.cshtml" />
+    <Content Remove="Views\Shared\_Partners.cshtml" />
+    <Content Remove="Views\Shared\_Prices.cshtml" />
+    <Content Remove="Views\Shared\_Services.cshtml" />
+    <Content Remove="Views\Shared\_SideBar.cshtml" />
+    <Content Remove="Views\Shared\_TopSocials.cshtml" />
+    <Content Remove="Views\Shared\_TTSLayout.cshtml" />
+    <Content Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Areas\Portal\Controllers\ApperanceController.txt" />
+    <None Remove="Startup.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\app-portal\pages\page\components\related\productRelated.html" />
+    <_ContentIncludedByDefault Remove="wwwroot\app-portal\pages\page\components\related\productRelated.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\app-portal\pages\page\details.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\css\bootstrap.min.css" />
+    <Content Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\css\now-ui-kit.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="angular-file-upload" Version="12.2.13" />
+    <PackageReference Include="angularjs" Version="1.7.2" />
+    <PackageReference Include="JWT" Version="5.0.0-beta2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Rewrite" Version="2.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0-preview-20180610-02" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Scriban" Version="1.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Portal\Views\Shared\Widgets\" />
+    <Folder Include="logs\" />
+    <Folder Include="wwwroot\app-portal\pages\moduleData\components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="appsettings.json" />
+    <None Include="Areas\Portal\Views\Portal\About.cshtml" />
+    <None Include="Areas\Portal\Views\Portal\Contact.cshtml" />
+    <None Include="Areas\Portal\Views\Portal\Search.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\Components\Breadcrumbs\Default.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\Components\ControlSidebar\Default.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\Components\HeaderNavbar\Default.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\Components\MainFooter\Default.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\Components\MainSidebar\Default.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\EditableSides\_EditableSide_Actions.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\EditableSides\_EditableSide_Cultures.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\Error.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\_Editor_Code.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\_Editor_ModuleData.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\_Pagination.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Areas\Portal\Views\Shared\_ViewByFieldType.cshtml" />
+    <None Include="Areas\Portal\Views\_BlankTemplate.cshtml" />
+    <None Include="Areas\Portal\Views\_ViewImports.cshtml" />
+    <None Include="Areas\Portal\Views\_ViewStart.cshtml" />
+    <None Include="data\lang-en.json" />
+    <None Include="data\configuration-en.json" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="wwwroot\app-portal\pages\order\components\main\main.js" />
+    <None Include="wwwroot\app-portal\pages\order\components\page-components.js" />
+    <None Include="wwwroot\app-portal\pages\order\components\services\modules.js" />
+    <None Include="wwwroot\app-portal\pages\order\order-controller.js" />
+    <None Include="wwwroot\app-portal\pages\order\order-services.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\core\bootstrap.min.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\core\jquery.min.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\core\popper.min.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\plugins\bootstrap-datetimepicker.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\plugins\bootstrap-selectpicker.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\plugins\bootstrap-switch.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\plugins\bootstrap-tagsinput.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\plugins\jasny-bootstrap.min.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\plugins\moment.min.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\plugins\nouislider.min.js" />
+    <None Include="wwwroot\lib\now-ui-kit-pro-v1.2.2\assets\js\plugins\presentation-page\rellax.min.js" />
+    <None Include="wwwroot\lib\Trumbowyg-2.9.0\plugins\table\trumbowyg.table.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Swastika.Cms.Lib\Swastika.Cms.Lib.csproj" />
+    <ProjectReference Include="..\Swastka.Cms.Api\Swastka.Cms.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Portal\Views\Portal\Init.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Portal\Views\Shared\_LayoutPortal_Angularbk.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Portal\Views\Shared\_LayoutPortal_Angularkb.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Backend\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Home\Alias.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\Templates\Default\Pages\_404.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\Templates\Default_Blank\Widgets\_Pagination.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutPortal_Angular.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="wwwroot\app-portal\pages\media\list.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\app-portal\pages\page\list.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\app-portal\pages\page\page-controller.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\app-portal\pages\page\page-services.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ApacheModRewrite.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="IISUrlRewrite.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions>
+    <VisualStudio><UserProperties appsettings_1json__JSONSchema="http://json.schemastore.org/commands" /></VisualStudio>
+  </ProjectExtensions>
+</Project>

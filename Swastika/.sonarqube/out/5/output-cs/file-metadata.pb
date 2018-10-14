@@ -1,0 +1,16 @@
+P
+NG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\App_Start\Startup.Auth.csc
+aG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\Areas\Portal\Controllers\PortalController.csW
+UG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\Controllers\BackendController.csT
+RG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\Controllers\BaseController.csT
+RG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\Controllers\HomeController.csW
+UG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\Controllers\InitCmsController.csO
+MG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\Models\ErrorViewModel.csU
+SG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\Models\Identity\JWTSettings.csA
+?G:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\Program.csA
+?G:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\Startup.csZ
+XG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\StartupEnhancementHostingStartup.csU
+SG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\ViewComponents\FooterNavbar.csU
+SG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\ViewComponents\HeaderNavbar.csT
+PC:\Users\smile\AppData\Local\Temp\.NETCoreApp,Version=v2.1.AssemblyAttributes.csu
+qG:\_github\Swastika-IO-Core\src\Swastika.Cms.Web.Mvc\obj\Debug\netcoreapp2.1\Swastika.Cms.Web.Mvc.AssemblyInfo.cs

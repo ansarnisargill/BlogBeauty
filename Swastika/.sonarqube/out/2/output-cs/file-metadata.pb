@@ -1,0 +1,17 @@
+F
+DG:\_github\Swastika-Heart\src\Swastika\Common\Helper\CommonHelper.cs@
+>G:\_github\Swastika-Heart\src\Swastika\Common\Helper\Helper.csC
+AG:\_github\Swastika-Heart\src\Swastika\Common\Helper\SEOHelper.csJ
+HG:\_github\Swastika-Heart\src\Swastika\Common\Helper\UnitOfWorkHelper.cs@
+>G:\_github\Swastika-Heart\src\Swastika\Common\Utility\Const.cs?
+=G:\_github\Swastika-Heart\src\Swastika\Common\Utility\Enum.csL
+JG:\_github\Swastika-Heart\src\Swastika\Domain\Core\Models\SignalRModels.csO
+MG:\_github\Swastika-Heart\src\Swastika\Domain\Core\Models\SupportedCulture.csV
+TG:\_github\Swastika-Heart\src\Swastika\Domain\Core\Repository\DefaultRepositories.csU
+SG:\_github\Swastika-Heart\src\Swastika\Domain\Core\Repository\ViewRepositoryBase.csS
+QG:\_github\Swastika-Heart\src\Swastika\Domain\Core\ViewModels\CommonViewModels.csP
+NG:\_github\Swastika-Heart\src\Swastika\Domain\Core\ViewModels\ViewModelBase.csN
+LG:\_github\Swastika-Heart\src\Swastika\UI\Core\Controllers\BaseController.csJ
+HG:\_github\Swastika-Heart\src\Swastika\UI\Core\SignalR\BaseSignalRHub.csU
+QC:\Users\smile\AppData\Local\Temp\.NETStandard,Version=v2.0.AssemblyAttributes.cs\
+XG:\_github\Swastika-Heart\src\Swastika\obj\Debug\netstandard2.0\Swastika.AssemblyInfo.cs
